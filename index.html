@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tei Farnando Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
     <nav id="navbar">
@@ -363,15 +364,16 @@
       </div>
       <div class="contact-two">
         <h2>Send Me Email</h2>
-        <form action="#">
+        <form id="contact-form">
           <label for="name"></label>
-          <input type="text" id="name" name="name" placeholder="Your Name" />
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
           <label for="email"></label>
           <input
             type="text"
             id="email"
             name="email"
             placeholder="Your Email Address"
+            required
           />
           <label for="message"></label>
           <input
@@ -379,9 +381,28 @@
             id="message"
             name="message"
             placeholder="Your Message"
+            required
           />
           <button type="submit">Send Email</button>
         </form>
+         <script>
+        // Initialize EmailJS with your User ID
+        emailjs.init("MfKgHVhBwMu2cU3Gc"); // Replace with your actual User ID from EmailJS
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            emailjs.sendForm('service_tei', 'template_dqexjdh', this)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    console.log('Success:', response.status, response.text);
+                }, function(error) {
+                    alert('Failed to send email. Please try again later.');
+                    console.log('Error:', error);
+                });
+        });
+    </script>
       </div>
     </section>
     <footer>&copy; 2024 Tei</footer>
