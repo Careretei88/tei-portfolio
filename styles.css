@@ -961,9 +961,9 @@ footer {
   }
 
   .contact-one p {
-    text-align: justify;
-    margin-left: 10%;
-    margin-right: 10%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 1rem;
   }
 
@@ -995,7 +995,8 @@ footer {
   }
 
   #about-one p {
-    text-align: justify;
+    text-align: left;
+    margin-right: 0;
   }
 
   #about-one h5 {
@@ -1040,7 +1041,7 @@ footer {
   }
 
   .hero p {
-    text-align: justify !important;
+    text-align: center !important;
     margin: 2rem 10%;
   }
 
